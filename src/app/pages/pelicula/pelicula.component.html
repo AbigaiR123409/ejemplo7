@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="form-container">
+        <h1>Catálogo de Películas</h1>
+        <h4>Alta de Películas</h4>
+        <div class="col-sm-10">
+            <p>
+                <label>Título</label>
+                <input type="text" class="form-control" [(ngModel)]="pelicula.titulo" />
+            </p>
+            <p>
+                <label>Género</label>
+                <input type="text" class="form-control" [(ngModel)]="pelicula.genero" />
+            </p>
+            <p>
+                <label>Año</label>
+                <input type="text" class="form-control" [(ngModel)]="pelicula.anios" />
+            </p>
+
+            <div class="button-container">
+                <button type="button" class="btn btn-primary" (click)="this.insertarPelicula()">Insertar</button>
+                <button type="button" class="btn btn-warning" (click)="this.updatePelicula()">Modificar</button>
+                <button type="button" class="btn btn-danger" (click)="this.deletePelicula()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <h4>Películas</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>Seleccionar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(pelicula of peliculas; track pelicula.id){
+                    <tr>
+                        <td>{{ pelicula.titulo }}</td>
+                        <td>{{ pelicula.genero }}</td>
+                        <td>{{ pelicula.anios }}</td>
+                        <td class="actions">
+                            <button type="button" class="btn btn-success" (click)="this.selectPelicula(pelicula)">Seleccionar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

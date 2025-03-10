@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="form-container">
+        <h1>Catálogo de Libros</h1>
+        <h4>Alta de Libros</h4>
+        <div class="col-sm-4">
+            <p>
+                <label>Título</label>
+                <input type="text" class="form-control" [(ngModel)]="libro.titulo" />
+            </p>
+            <p>
+                <label>Autor</label>
+                <input type="text" class="form-control" [(ngModel)]="libro.autor" />
+            </p>
+            <p>
+                <label>Editorial</label>
+                <input type="text" class="form-control" [(ngModel)]="libro.editorial" />
+            </p>
+            <p>
+                <label>Año de Publicación</label>
+                <input type="text" class="form-control" [(ngModel)]="libro.anioPublicacion" />
+            </p>
+
+            <div class="button-container">
+                <button type="button" class="btn btn-primary" (click)="this.insertarLibro()">Insertar</button>
+                <button type="button" class="btn btn-warning" (click)="this.updateLibro()">Modificar</button>
+                <button type="button" class="btn btn-danger" (click)="this.deleteLibro()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <h4>Libros</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Editorial</th>
+                    <th>Año de Publicación</th>
+                    <th>Seleccionar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(libro of libros; track libro.id){
+                    <tr>
+                        <td>{{ libro.titulo }}</td>
+                        <td>{{ libro.autor }}</td>
+                        <td>{{ libro.editorial }}</td>
+                        <td>{{ libro.anioPublicacion }}</td>
+                        <td class="actions">
+                            <button type="button" class="btn btn-success" (click)="this.selectLibro(libro)">Seleccionar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

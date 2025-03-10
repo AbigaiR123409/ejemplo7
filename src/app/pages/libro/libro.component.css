@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200vh;
+}
+
+.container {
+    width: 90%; 
+    max-width: 6000px; 
+    margin: 100px auto;
+    display: flex;
+    gap: 40px; 
+}
+
+.form-container {
+    flex: 1; 
+    background-color: rgba(255, 182, 193, 0.5);
+    padding: 40px; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+h1, h4 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; 
+    font-size: 30px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 10px; 
+    font-weight: bold;
+    color: #333;
+    font-size: 28px; 
+}
+
+input.form-control {
+    width: 100%;
+    padding: 15px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 30px; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-top: 30px; 
+}
+
+button {
+    padding: 15px 25px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px; 
+    transition: background-color 0.3s ease; 
+}
+
+button.btn-primary {
+    background-color: #ff69b4; 
+    color: #fff;
+}
+
+button.btn-warning {
+    background-color: #ff94c2;
+    color: #000;
+}
+
+button.btn-danger {
+    background-color: #ff1493; 
+    color: #fff;
+}
+
+button.btn-success {
+    background-color: #ff6eb4;
+    color: #fff;
+}
+
+.table-container {
+    flex: 1; 
+    background-color: rgba(255, 182, 193, 0.5); 
+    padding: 40px; 
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 182, 193, 0.3); 
+    border-radius: 8px;
+}
+
+table.table th,
+table.table td {
+    padding: 15px; 
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 28px;
+}
+
+table.table th {
+    background-color: rgba(255, 182, 193, 0.6);  
+    color: #333;
+    font-weight: bold;
+}
+
+table.table tbody tr:hover {
+    background-color: rgba(255, 182, 193, 0.4); 
+}
+
+table.table td.actions {
+    text-align: center; 
+}
+
+table.table td.actions .button-container {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+}
+
+table.table button {
+    padding: 10px 20px;
+    font-size: 16px; 
+}
