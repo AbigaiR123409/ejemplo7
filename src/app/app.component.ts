@@ -7,7 +7,7 @@ import { PeliculaComponent } from './pages/pelicula/pelicula.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,LibroComponent,ProductoComponent,PeliculaComponent,RouterLink],
+  imports: [RouterOutlet,],
   templateUrl: './app.component.html', 
   styleUrl: './app.component.css'
 })
