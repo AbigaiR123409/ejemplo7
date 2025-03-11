@@ -23,6 +23,7 @@ export class PeliculaService {
     const peliculasCollection = collection(this.db, 'pelicula');
     const peliculaData = {
       titulo: pelicula.titulo,
+      estado: pelicula.estado !== undefined ? pelicula.estado : false, 
       genero: pelicula.genero,
       anios: pelicula.anios
     };
@@ -33,6 +34,7 @@ export class PeliculaService {
     const documentRef = doc(this.db, 'pelicula', pelicula.id);
     updateDoc(documentRef,{
       titulo: pelicula.titulo,
+      estado: pelicula.estado,
       genero: pelicula.genero,
       anios: pelicula.anios
     });

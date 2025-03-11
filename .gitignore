@@ -41,5 +41,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/.environment.development.ts
-
+src/environments/environment.development.ts
+node_modules/
+dist/
+.angular/

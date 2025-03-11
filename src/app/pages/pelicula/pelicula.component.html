@@ -15,11 +15,15 @@
                 <label>Año</label>
                 <input type="text" class="form-control" [(ngModel)]="pelicula.anios" />
             </p>
+            <div class="form-group">
+                <label>Estado:</label>
+                <input type="checkbox" [(ngModel)]="pelicula.estado" /> Disponible
+            </div>
 
             <div class="button-container">
-                <button type="button" class="btn btn-primary" (click)="this.insertarPelicula()">Insertar</button>
-                <button type="button" class="btn btn-warning" (click)="this.updatePelicula()">Modificar</button>
-                <button type="button" class="btn btn-danger" (click)="this.deletePelicula()">Eliminar</button>
+                <button type="button" class="btn btn-primary" (click)="insertarPelicula()">Insertar</button>
+                <button type="button" class="btn btn-warning" (click)="updatePelicula()">Modificar</button>
+                <button type="button" class="btn btn-danger" (click)="deletePelicula()">Eliminar</button>
             </div>
         </div>
     </div>
@@ -32,7 +36,8 @@
                     <th>Título</th>
                     <th>Género</th>
                     <th>Año</th>
-                    <th>Seleccionar</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,8 +46,11 @@
                         <td>{{ pelicula.titulo }}</td>
                         <td>{{ pelicula.genero }}</td>
                         <td>{{ pelicula.anios }}</td>
+                        <td>
+                            {{ pelicula.estado ? 'Disponible' : 'No disponible' }}
+                        </td>
                         <td class="actions">
-                            <button type="button" class="btn btn-success" (click)="this.selectPelicula(pelicula)">Seleccionar</button>
+                            <button type="button" class="btn btn-success" (click)="selectPelicula(pelicula)">Seleccionar</button>
                         </td>
                     </tr>
                 }
