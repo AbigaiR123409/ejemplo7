@@ -28,6 +28,7 @@ export class PeliculaComponent {
     this.peliculaService.agregarPelicula(this.pelicula);
     this.getPeliculas();
     this.pelicula = new Pelicula();
+    
   }
 
   selectPelicula(peliculaSeleccionado:Pelicula){
@@ -44,6 +45,22 @@ export class PeliculaComponent {
     this.peliculaService.eliminarPelicula(this.pelicula);
     this.getPeliculas();
     this.pelicula = new Pelicula();
+  }
+
+  validarPelicula(): boolean {
+    if (!this.pelicula.titulo || this.pelicula.titulo.trim().length < 10) {
+        alert("El título debe tener al menos 10 caracteres.");
+        return false;
+    }
+    if (!this.pelicula.genero || this.pelicula.genero.trim().length === 0) {
+        alert("El genero es obligatorio.");
+        return false;
+    }
+    if (!this.pelicula.anios || this.pelicula.anios < 0) {
+        alert("El año es obligatorio");
+        return false;
+    }
+    return true;
   }
 
 }
