@@ -5,15 +5,25 @@
         <div class="col-sm-10">
             <p>
                 <label>Título</label>
-                <input type="text" class="form-control" [(ngModel)]="pelicula.titulo" />
+                <input type="text" class="form-control" [(ngModel)]="pelicula.titulo" name="autor" required minlength="10" #titulo="ngModel"/>
+                    @if(titulo.invalid && titulo.touched){
+                      <small class="text-danger">El nombre del titulo debe contener al menos 10 caracteres.</small>
+                    }
             </p>
             <p>
                 <label>Género</label>
-                <input type="text" class="form-control" [(ngModel)]="pelicula.genero" />
+                <input type="text" class="form-control" [(ngModel)]="pelicula.genero" name="autor" required minlength="0" #genero="ngModel"/>
+                    @if(genero.invalid && genero.touched){
+                      <small class="text-danger">El genero es obligatorio.</small>
+                    }
             </p>
             <p>
                 <label>Año</label>
-                <input type="text" class="form-control" [(ngModel)]="pelicula.anios" />
+                <input type="text" class="form-control" [(ngModel)]="pelicula.anios" name="anios" required required minlength="0" #anios="ngModel"
+                       oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4);"  />
+                       @if(anios.invalid && anios.touched){
+                        <small class="text-danger">El genero es obligatorio.</small>
+                       }
             </p>
             <div class="form-group">
                 <label>Estado:</label>
